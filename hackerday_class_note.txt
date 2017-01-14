@@ -1,0 +1,95 @@
+Making big data available and accessible
+==========================================
+Before data on any platform will become an asset to any organization, it has to pass through processing stage to ensure quality and availability. Afterwards, that data has to be available to users (both humna and system users).
+The availability of quality data in any organization is the guarantee of the value that data science (in general) will be to that organization.
+We are using the airline on-time performance dataset to demonstrate these principles and techniques in this hackerday and we will proceed to answer questions that can be found in the website like 
+	- When is the best time of day/day of week/time of year to fly to minimise delays?
+	- Do older planes suffer more delays?
+	- How does the number of people flying between different locations change over time?
+We will also transform the data access model into time series and demonstrate how clients can access data in our big data infrastructure using a simple tool like the Excel spreadsheet.
+
+Dataset
+==============
+The dataset for this project is freely available for download from the website http://stat-computing.org/dataexpo/2009/. According to the website, The data consists of flight arrival and departure details for all commercial flights within the USA, from October 1987 to April 2008. However, we want to restrict our project to six years (2003-2008) worth of data. 
+http://stat-computing.org/dataexpo/2009/2003.csv.bz2
+http://stat-computing.org/dataexpo/2009/2004.csv.bz2
+http://stat-computing.org/dataexpo/2009/2005.csv.bz2
+http://stat-computing.org/dataexpo/2009/2006.csv.bz2
+http://stat-computing.org/dataexpo/2009/2007.csv.bz2
+http://stat-computing.org/dataexpo/2009/2008.csv.bz2
+http://stat-computing.org/dataexpo/2009/carriers.csv
+http://stat-computing.org/dataexpo/2009/plane-data.csv
+http://stat-computing.org/dataexpo/2009/airports.csv
+http://www.cloudera.com/downloads/connectors/impala/odbc/2-5-36.html
+
+Two majors user of data infrastructure
+	Human
+	System
+
+Ways that data can be ingested/served in the data infrastructure
+	Messaging Layer (message-oriented middleware)
+	Data Warehouse (Batch)
+	backend services
+
+Key learning.
+==============
+1. Data preprocessing with pig/Spark
+	Purpose:
+		give unstructured data some structure
+		Handle bad data
+		Integrate data with values from external system
+		Preprocess binary content
+
+	- Writing directly to the data warehouse (ETL paradigm)
+
+	- Data storage is less of a problem than efficient data retrieval
+
+	- Pig cannot write to a HCatalog table in parquet format
+	- Spark can write to Hive Tables and also write parquet files to hdfs directories
+
+2. Hive vs. MPP database systems (Hive vs. Impala/Drill/Presto)
+		MPP Databases (In hadoop ecosystem)
+		Impala architecture
+		Working with Hive vs. Impala and both
+		Impala and hive-specific serdes/custom udfs
+
+		Impala File format support
+			Text, RCFile, SequenceFile, Avro and Parquet
+			When it comes to Parquet files, Impala writes data files with a default block size of 1 GB.
+
+3. Hive/Impala partitioning and clustering
+	Partitioning
+	Hive 
+		Bucketing
+			Sampling
+4. Data compression, tuning and query optimization
+	Partition Partition Partition
+	Hive 
+		Compression
+		Execution Engine 
+		Indexes
+
+	Impala
+		COMPUTE STATS
+		File Format
+
+	Tunning Joins
+	
+5. Using database views to represent data.
+	Views
+		Security
+		Projection to hide complexities
+
+		Building time series data model 
+
+6. Visualizing data using Microsoft Excel via ODBC
+
+Extra:
+	QlikView and Impala
+
+
+Prerequisite
+===============
+It is expected that students have a fair knowledge of Big Data and hadoop particularly HDFS, Pig, Hive and Impala. 
+Installation Cloudera quickstart VM.
+For purpose of visualization, it is expected that you have Microsoft Excel on your host machine or an equivalent.
