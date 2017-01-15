@@ -62,6 +62,7 @@ Key learning.
 	Hive 
 		Bucketing
 			Sampling
+			
 4. Data compression, tuning and query optimization
 	Partition Partition Partition
 	Hive 
@@ -71,6 +72,7 @@ Key learning.
 
 	Impala
 		COMPUTE STATS
+		Caching 
 		File Format
 
 	Tunning Joins
@@ -80,7 +82,7 @@ Key learning.
 		Security
 		Projection to hide complexities
 
-		Building time series data model 
+	Building time series data model 
 
 6. Visualizing data using Microsoft Excel via ODBC
 

@@ -34,3 +34,5 @@ val flightRDD = rawData
 	})
 
 flight.saveAsTextFile("/user/cloudera/output/airline/flights")
+//dataframe.write.mode("append").format("").save()
+//write directly to a hive table

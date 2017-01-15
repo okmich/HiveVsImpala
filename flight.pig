@@ -36,3 +36,4 @@ rel_data = FOREACH headless_data GENERATE year, month, dayOfMonth, dayOfWeek,
 	(LateAircraftDelay == 'NA' ? '' : LateAircraftDelay) AS LateAircraftDelay;
 
 STORE rel_data INTO '/user/cloudera/output/airline/flight' Using PigStorage(',');
+#STORE rel_date INTO 'airline.txt_flight' USING org.apache.hive.hcatalog.pig.HCatStorer();
