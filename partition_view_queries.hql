@@ -54,7 +54,18 @@ month, dayofmonth,dayofweek, deptime, crsdeptime, arrtime, crsarrtime,
 
 
 create view v_flights_denom as 
-select year,month, cast(concat(cast(year as string), cast(month as string)) as smallint) yearmonth, dayofmonth,dayofweek, flightnum, deptime, crsdeptime, arrtime, crsarrtime, 
+select year,month, cast(concat(cast(year as string), cast(month as string)) as smallint) yearmonth, dayofmonth,
+        case dayofweek 
+            when 1 then 'Monday'
+            when 2 then 'Tuesday'
+            when 3 then 'Wednesday'
+            when 4 then 'Thursday'
+            when 5 then 'Fridday'
+            when 6 then 'Saturday'
+            when 6 then 'Sunday'
+            else 'Unknown'
+        end dayofweek, 
+        flightnum, deptime, crsdeptime, arrtime, crsarrtime, 
       actualelapsedtime,
     crselapsedtime, airtime, arrdelay, depdelay, 
     origin, dest, distance, taxiin, taxiout,

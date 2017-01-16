@@ -6,7 +6,7 @@ We are using the airline on-time performance dataset to demonstrate these princi
 	- When is the best time of day/day of week/time of year to fly to minimise delays?
 	- Do older planes suffer more delays?
 	- How does the number of people flying between different locations change over time?
-We will also transform the data access model into time series and demonstrate how clients can access data in our big data infrastructure using a simple tool like the Excel spreadsheet.
+We will also transform the data access model into time series and demonstrate how clients can access data in our big data infrastructure using a simple tool like the Excel spreadsheet and/or QlikView.
 
 Dataset
 ==============
